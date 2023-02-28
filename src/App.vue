@@ -1,30 +1,61 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
+<script>
+import axios from 'axios'
+export default {
+  components : { },
+  data () {
+    return {
+      // api_key: "key=lAYuyhutioeCVRvHVSZgBC8wf8CPcO0E",
+      api_key: "key=OwsqVQlIWGAZAkomcYI0rDYG2tDpmRPE",
+      baseUrl: "https://api.tomtom.com/search/2/structuredGeocode.json?",
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+      queryParams : {
+        countryCode: "IT",
+        limit: 1, //default,
+        streetNumber: "4/43",
+        streetName: "via michelangelo",
+        municipality: "caltanissetta",
+        municipalitySubdivision: "",
+        countryTertiarySubdivision: "",
+        countrySecondarySubdivision: "",
+        countrySubdivision: "",
+        postalCode: "93100",
+        entityTypeSet: "",
+
+
+        
+
+      }
+
+    }
+  },
+  methods: {
+    fecthTomTom() {
+
+      // axios.get("https://api.tomtom.com/search/2/geocode/De%20Ruijterkade%20154,%201011%20AC,%20Amsterdam.json?key=lAYuyhutioeCVRvHVSZgBC8wf8CPcO0E").then((resp) => {
+      axios.get(this.baseUrl + this.api_key , {
+        params : this.queryParams
+      })
+      .then((resp) =>  {
+        console.log(resp);
+        console.log(resp.data.results[0].address.freeformAddress);
+        console.log(resp.data.results[0].position.lat);
+        console.log(resp.data.results[0].position.lon);
+      })
+       
+    
+    },
+  },
+  mounted() {
+    this.fecthTomTom()
+  },
+  
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+</script>
+<style lang="">
+  
 </style>
