@@ -2,9 +2,9 @@
   <div class="container">
     <div>
       <h1>villa itria</h1>
-      <div class="row g-4">
-        <div class="col-2" >
-          <img class="img-fluid" :src="immagini" alt="">
+      <div class="row gap-3">
+        <div class="col-2" v-for="immagine in imgs" >
+          <img  class="img-fluid mb-3" v-for="img in immagine" :src="img" alt="">
         </div>
        
         
@@ -15,13 +15,18 @@
   </div>
 </template>
 <script>
+import immagini from './immagini.json'
 import axios from 'axios';
-import imgs from './immagini.js'
+
+
 export default {
   components : {},
   data () {
     return {
-      immagini : imgs.homes.home.url_1,
+      imgs : immagini,
+      
+      
+      //immagini : imgs.homes.home.url_1,
       // api_key: "key=lAYuyhutioeCVRvHVSZgBC8wf8CPcO0E",
       api_key: "key=OwsqVQlIWGAZAkomcYI0rDYG2tDpmRPE",
       baseUrl: "https://api.tomtom.com/search/2/structuredGeocode.json?",
@@ -70,10 +75,12 @@ export default {
     // }
   },
   mounted() {
-    this.fecthTomTom(),
-    this.fetchsatel()
-  },
+    this.fecthTomTom()
+    // this.fetchsatel()
+    
+   
   
+}
 }
 </script>
 <style lang="">

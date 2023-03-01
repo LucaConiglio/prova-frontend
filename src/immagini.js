@@ -69,8 +69,8 @@ homes : {
     ourl_2 : "https://a0.muscache.com/im/pictures/197b3de7-5453-49e9-9a84-b7d6c7a23c99.jpg?im_w=720";
     ourl_3 : "https://a0.muscache.com/im/pictures/da1828e0-c205-4140-9a91-a79f95bae70d.jpg?im_w=720";
     ourl_4 : "https://a0.muscache.com/im/pictures/385290cf-79ad-4af4-bb31-fc3b77fd1a67.jpg?im_w=720";
-    ourl_5 : "https://a0.muscache.com/im/pictures/cb04fc0b-525f-48f2-bdda-4f0329df9c7c.jpg?im_w=720;
-  }o
+    ourl_5 : "https://a0.muscache.com/im/pictures/cb04fc0b-525f-48f2-bdda-4f0329df9c7c.jpg?im_w=720";
+  }
   home_10 : {
     ourl_1 : "https://a0.muscache.com/im/pictures/634f228c-0e4d-4537-a50e-1a694704fc69.jpg?im_w=720";
     ourl_2 : "https://a0.muscache.com/im/pictures/e721253e-9490-4fea-8427-e1309d5f5f83.jpg?im_w=720";
