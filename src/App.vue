@@ -1,5 +1,33 @@
 <template>
-  <div>
+  <div class="container">
+    <div>
+      <h1>villa itria</h1>
+      <div class="row g-4">
+        <div class="col-2">
+          <img class="img-fluid" src="https://a0.muscache.com/im/pictures/25af7fb2-36a6-4446-a2dc-3a6f9710e63c.jpg?im_w=1200" alt="">
+        </div>
+        <div class="col-2">
+          <img class="img-fluid" src="https://a0.muscache.com/im/pictures/8fe5cd96-74cc-49a5-b2af-9ff5455ac7c4.jpg?im_w=720" alt="">
+        </div>
+        <div class="col-2">
+          <img class="img-fluid" src="https://a0.muscache.com/im/pictures/207e21af-c211-4580-8487-973a1bc711e5.jpg?im_w=1200" alt="">
+        </div>
+        <div class="col-2">
+          <img class="img-fluid" src="https://a0.muscache.com/im/pictures/d68a1a84-7b3a-4c06-85bf-09f9da92a34b.jpg?im_w=1200" alt="">
+        </div>
+        <div class="col-2">
+          <img class="img-fluid" src="https://a0.muscache.com/im/pictures/75fd1d3a-2d64-4d43-8597-455eea00595b.jpg?im_w=720" alt="">
+        </div>
+        <div class="col-2">
+          <img class="img-fluid" src="https://a0.muscache.com/im/pictures/e125d8ce-f33a-4db9-9cc9-907603cb72dd.jpg?im_w=720" alt="">
+        </div>
+        <div class="col-2">
+          <img class="img-fluid" src="https://a0.muscache.com/im/pictures/38f721dc-7bb7-46b2-b023-230f0c151f1b.jpg?im_w=1440" alt="">
+        </div>
+        
+      </div>
+    </div>
+    
     
   </div>
 </template>
@@ -49,9 +77,16 @@ export default {
        
     
     },
+
+    fetchsatel() {
+      axios.post("https://hotels4.p.rapidapi.com/properties/v2/listapplication/jsond2fd74f727msh8259feea6125027p13558fjsnb70d55e8dca2hotels4.p.rapidapi.com").then((resp) =>  {
+       console.log(resp);
+      })
+    }
   },
   mounted() {
-    this.fecthTomTom()
+    this.fecthTomTom(),
+    this.fetchsatel()
   },
   
 }
